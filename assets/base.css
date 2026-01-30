@@ -1401,7 +1401,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button:not(.button-secondary, .button-unstyled) {
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.1em;
 }
 
@@ -1466,6 +1466,11 @@ button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
 .button:not(.button-secondary, .button-unstyled):hover {
   box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color),
     0 0 12px rgb(var(--color-primary-rgb) / 0.35);
+}
+
+.button:not(.button-secondary, .button-unstyled):active {
+  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color),
+    0 0 10px rgb(var(--color-primary-rgb) / 0.5);
 }
 
 .button-secondary {
