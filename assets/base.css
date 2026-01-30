@@ -357,13 +357,13 @@ p:empty {
 
 /* Focus */
 *:focus-visible {
-  outline: var(--focus-outline-width) solid currentcolor;
+  outline: var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
 }
 
 @supports not selector(:focus-visible) {
   *:focus {
-    outline: var(--focus-outline-width) solid currentcolor;
+    outline: var(--focus-outline-width) solid var(--color-primary);
     outline-offset: var(--focus-outline-offset);
   }
 }
@@ -970,6 +970,11 @@ a:where(:not(.button, .button-primary, .button-secondary)):hover {
   text-decoration-color: currentcolor;
 }
 
+a:where(:not(.button, .button-primary, .button-secondary)):focus-visible {
+  color: var(--color-primary);
+  text-decoration-color: currentcolor;
+}
+
 :is(h1, h2, h3, h4, h5, h6, p) > a:hover {
   --button-color: var(--color, var(--color-primary-hover));
 }
@@ -1393,9 +1398,11 @@ button.shopify-payment-button__button--unbranded {
   font-family: var(--button-font-family-primary);
   text-transform: var(--button-text-case-primary);
   border-radius: var(--style-border-radius-buttons-primary);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+}
+
+.button:not(.button-secondary, .button-unstyled) {
+  font-weight: 800;
+  letter-spacing: 0.1em;
 }
 
 .button:not(.button-secondary, .button-unstyled) {
@@ -1454,6 +1461,11 @@ button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   --button-color: var(--color-primary-button-hover-text);
   --button-background-color: var(--color-primary-button-hover-background);
   --button-border-color: var(--color-primary-button-hover-border);
+}
+
+.button:not(.button-secondary, .button-unstyled):hover {
+  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color),
+    0 0 12px rgb(var(--color-primary-rgb) / 0.35);
 }
 
 .button-secondary {
